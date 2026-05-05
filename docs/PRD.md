@@ -1,7 +1,7 @@
 # dexwatch
 
-Status: in-progress
-Decision: in-progress
+Status: MVP built
+Decision: local-first V1 accepted for public OSS seed
 
 ## Scorecard
 
