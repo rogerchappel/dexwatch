@@ -1,38 +1,29 @@
 # Roadmap
 
-This roadmap describes intended direction, not a binding delivery promise.
-Review it regularly and update it as the project learns from users,
-contributors, and implementation constraints.
+## V1: local fixture MVP
 
-## Now
+- [x] Local DexScreener-style snapshot inspection
+- [x] Chain, DEX, symbol, liquidity, and volume filters
+- [x] Normalized JSON exports
+- [x] OHLC-style JSON and CSV exports
+- [x] Provenance metadata with input hashes
+- [x] Fixture-backed unit tests and CLI smoke tests
 
-- Define the smallest useful project scope.
-- Keep repository setup, documentation, and verification easy for contributors
-  to follow.
-- Ship small, reviewable improvements.
+## Near-term
 
-## Next
-
-- Add the next capabilities that directly support the project's primary users.
-- Improve tests, docs, and examples around the most used workflows.
-- Reduce setup friction discovered during early use.
+- [ ] More public fixture shapes from DexScreener responses
+- [ ] Golden snapshot tests for CLI output stability
+- [ ] Optional NDJSON output for larger local captures
+- [ ] Example backtest adapter notebook or script
 
 ## Later
 
-- Consider larger features after the core workflow is stable.
-- Add automation only where it removes repeated maintainer work.
-- Revisit packaging, deployment, or integration options based on real demand.
+- [ ] Explicit API capture recipes for common DexScreener endpoints
+- [ ] Watch-mode planner that prints actions before running them
+- [ ] Plugin format for downstream bot research pipelines
 
-## Not Planned
+## Non-goals
 
-- Unrelated platform rewrites without a clear migration path.
-- Mandatory dependencies on a single ecosystem unless the project requires it.
-- Public release dates before maintainers are ready to commit to them.
-
-## Roadmap Review
-
-Before each major or meaningful minor release:
-
-- Move completed user-visible work into `CHANGELOG.md`.
-- Remove stale commitments.
-- Promote only the next reviewable set of work into `Now`.
+- Trading, signing, wallet access, or order execution
+- Hidden polling or hidden network calls
+- Credential discovery or telemetry
