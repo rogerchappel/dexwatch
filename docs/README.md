@@ -1,13 +1,15 @@
-# /Users/roger/Developer/my-opensource/dexwatch Documentation
+# dexwatch docs
 
-This directory holds project documentation.
+- [PRD](PRD.md) defines the local-first V1 contract.
+- [TASKS](TASKS.md) tracks implementation waves.
+- [ORCHESTRATION](ORCHESTRATION.md) captures repository automation context.
 
-## Contents
+## V1 data flow
 
-- [Contributing guide](../CONTRIBUTING.md)
-- [Security policy](../SECURITY.md)
-- [Agent instructions](../AGENTS.md)
+1. Start from a local DexScreener-style JSON fixture or explicitly captured URL.
+2. Normalize pool fields into stable JavaScript objects.
+3. Apply deterministic filters.
+4. Build OHLC-style buckets from captured timestamps.
+5. Write JSON, CSV, report, and provenance outputs.
 
-## Additional docs
-
-For a hosted documentation site, see the `docs-site/` directory if present.
+The default path has no network behavior.
