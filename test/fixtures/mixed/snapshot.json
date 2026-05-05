@@ -1,0 +1,28 @@
+[
+  {
+    "chainId": "base",
+    "dexId": "aerodrome",
+    "pairAddress": "0xCAFE",
+    "baseToken": { "address": "0xBase", "name": "Base Meme", "symbol": "MEME" },
+    "quoteToken": { "address": "0xUSDC", "name": "USD Coin", "symbol": "USDC" },
+    "priceUsd": "1.00",
+    "volume": { "h24": 3000 },
+    "liquidity": { "usd": 30000 },
+    "txns": { "h24": { "buys": 3, "sells": 7 } },
+    "pairCreatedAt": "2026-05-01T00:00:00.000Z",
+    "capturedAt": "2026-05-01T00:10:00.000Z"
+  },
+  {
+    "chainId": "base",
+    "dexId": "aerodrome",
+    "pairAddress": "0xCAFE",
+    "baseToken": { "address": "0xBase", "name": "Base Meme", "symbol": "MEME" },
+    "quoteToken": { "address": "0xUSDC", "name": "USD Coin", "symbol": "USDC" },
+    "priceUsd": "1.20",
+    "volume": { "h24": 5000 },
+    "liquidity": { "usd": 33000 },
+    "txns": { "h24": { "buys": 8, "sells": 6 } },
+    "pairCreatedAt": "2026-05-01T00:00:00.000Z",
+    "capturedAt": "2026-05-01T00:40:00.000Z"
+  }
+]
