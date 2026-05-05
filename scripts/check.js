@@ -25,7 +25,8 @@ for (const file of required) {
 for (const file of await walk(root)) {
   const text = await readFile(file, 'utf8');
   if (text.includes('\t')) throw new Error(`tabs are not allowed: ${file}`);
-  if (text.includes('Replace this section')) throw new Error(`scaffold placeholder remains: ${file}`);
+  const scaffoldPhrase = ['Replace', 'this', 'section'].join(' ');
+  if (text.includes(scaffoldPhrase)) throw new Error(`scaffold placeholder remains: ${file}`);
 }
 
 console.log('check passed');
