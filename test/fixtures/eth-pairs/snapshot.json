@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1.0.0",
+  "capturedAt": "2026-05-01T00:15:00.000Z",
+  "pairs": [
+    {
+      "chainId": "ethereum",
+      "dexId": "uniswap",
+      "url": "https://dexscreener.com/ethereum/0xaaa",
+      "pairAddress": "0xAAA",
+      "baseToken": { "address": "0xBaseA", "name": "Alpha Token", "symbol": "ALPHA" },
+      "quoteToken": { "address": "0xC02", "name": "Wrapped Ether", "symbol": "WETH" },
+      "priceNative": "0.01",
+      "priceUsd": "30.5",
+      "txns": { "h24": { "buys": 10, "sells": 5 } },
+      "volume": { "h24": 120000 },
+      "liquidity": { "usd": 250000 },
+      "fdv": 30000000,
+      "marketCap": 24000000,
+      "pairCreatedAt": 1714521600000
+    },
+    {
+      "chainId": "ethereum",
+      "dexId": "uniswap",
+      "url": "https://dexscreener.com/ethereum/0xbbb",
+      "pairAddress": "0xBBB",
+      "baseToken": { "address": "0xBaseB", "name": "Beta Token", "symbol": "BETA" },
+      "quoteToken": { "address": "0xC02", "name": "Wrapped Ether", "symbol": "WETH" },
+      "priceNative": "0.02",
+      "priceUsd": "61",
+      "txns": { "h24": { "buys": 22, "sells": 8 } },
+      "volume": { "h24": 180000 },
+      "liquidity": { "usd": 95000 },
+      "fdv": 12000000,
+      "marketCap": 10000000,
+      "pairCreatedAt": 1714525200000
+    },
+    {
+      "chainId": "solana",
+      "dexId": "raydium",
+      "url": "https://dexscreener.com/solana/low",
+      "pairAddress": "LOW",
+      "baseToken": { "address": "Low", "name": "Tiny Pool", "symbol": "LOW" },
+      "quoteToken": { "address": "So111", "name": "Solana", "symbol": "SOL" },
+      "priceUsd": "0.01",
+      "txns": { "h24": { "buys": 1, "sells": 1 } },
+      "volume": { "h24": 12 },
+      "liquidity": { "usd": 42 },
+      "pairCreatedAt": 1714528800000
+    }
+  ]
+}
