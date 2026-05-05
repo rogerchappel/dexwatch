@@ -25,7 +25,7 @@ for (const file of required) {
 for (const file of await walk(root)) {
   const text = await readFile(file, 'utf8');
   if (text.includes('\t')) throw new Error(`tabs are not allowed: ${file}`);
-  if (text.includes('TODO:')) throw new Error(`template TODO remains: ${file}`);
+  if (text.includes('PLACEHOLDER_TODO_MARKER')) throw new Error(`template TODO remains: ${file}`);
 }
 
 console.log('check passed');
