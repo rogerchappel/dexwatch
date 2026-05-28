@@ -12,6 +12,13 @@ test('prints help without side effects', async () => {
 test('rejects hidden network capture', async () => {
   let stderr = '';
   const code = await runCli(['capture', 'https://example.test/data.json'], { stdout: { write: () => {} }, stderr: { write: (chunk) => { stderr += chunk; } } });
-  assert.equal(code, 1);
+  assert.equal(code, 2);
   assert.match(stderr, /requires allowNetwork/);
+});
+
+test('rejects invalid stdout formats as usage errors', async () => {
+  let stderr = '';
+  const code = await runCli(['inspect', 'test/fixtures/eth-pairs', '--format', 'xml'], { stdout: { write: () => {} }, stderr: { write: (chunk) => { stderr += chunk; } } });
+  assert.equal(code, 2);
+  assert.match(stderr, /--format must be json or text/);
 });
