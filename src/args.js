@@ -1,6 +1,8 @@
+import { DexwatchError } from './errors.js';
+
 function readValue(args, index, flag) {
   const value = args[index + 1];
-  if (!value || value.startsWith('--')) throw new Error(`${flag} requires a value`);
+  if (!value || value.startsWith('--')) throw new DexwatchError(`${flag} requires a value`, { code: 'USAGE' });
   return value;
 }
 
@@ -18,7 +20,10 @@ export function parseCliArgs(argv) {
     const value = readValue(rest, index, arg);
     index += 1;
     if (arg === '--output' || arg === '-o') options.outputDir = value;
-    else if (arg === '--format') options.format = value;
+    else if (arg === '--format') {
+      if (value !== 'json' && value !== 'text') throw new DexwatchError(`--format must be json or text, received "${value}"`, { code: 'USAGE' });
+      options.format = value;
+    }
     else if (arg === '--chain') options.filters.chains.push(value);
     else if (arg === '--dex') options.filters.dexes.push(value);
     else if (arg === '--symbol') options.filters.symbols.push(value);
@@ -26,7 +31,7 @@ export function parseCliArgs(argv) {
     else if (arg === '--min-volume-h24') options.filters.min.volumeH24 = Number(value);
     else if (arg === '--bucket-minutes') options.bucketMinutes = Number(value);
     else if (arg === '--allow-network') options.allowNetwork = value === 'true' || value === '1' || value === 'yes';
-    else throw new Error(`Unknown option: ${arg}`);
+    else throw new DexwatchError(`Unknown option: ${arg}`, { code: 'USAGE' });
   }
 
   options.input = positionals[0];

@@ -48,7 +48,7 @@ export async function runCli(argv = process.argv.slice(2), io = { stdout: proces
     throw new DexwatchError(`Unknown command: ${options.command}`, { code: 'USAGE' });
   } catch (error) {
     io.stderr.write(`dexwatch: ${error.message}\n`);
-    return 1;
+    return error instanceof DexwatchError && error.code === 'USAGE' ? 2 : 1;
   }
 }
 

@@ -1,10 +1,11 @@
 import { writeFile } from 'node:fs/promises';
+import { DexwatchError } from './errors.js';
 import { ensureOutputDir } from './io.js';
 import { buildProvenance } from './provenance.js';
 
 export async function captureUrl(url, options = {}) {
   if (options.allowNetwork !== true) {
-    throw new Error('captureUrl requires allowNetwork: true. dexwatch never performs hidden network calls.');
+    throw new DexwatchError('captureUrl requires allowNetwork: true. dexwatch never performs hidden network calls.', { code: 'USAGE' });
   }
   const capturedAt = options.capturedAt ?? new Date().toISOString();
   const response = await fetch(url, { headers: { accept: 'application/json', 'user-agent': 'dexwatch/0.1' } });
