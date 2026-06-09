@@ -99,6 +99,18 @@ npm run smoke
 bash scripts/validate.sh
 ```
 
+## Development
+
+Run the same checks maintainers use before opening a PR:
+
+```sh
+npm test
+npm run check
+npm run build
+npm run smoke
+npm run package:smoke
+npm run release:check
+```
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md). Please keep fixtures deterministic,
