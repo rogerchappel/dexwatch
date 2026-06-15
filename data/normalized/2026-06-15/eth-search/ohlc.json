@@ -1,0 +1,18 @@
+[
+  {
+    "bucketStart": "2026-06-15T04:00:00.000Z",
+    "bucketMinutes": 60,
+    "chainId": "ethereum",
+    "dexId": "uniswap",
+    "pairAddress": "0x2287a9620adcbf6250dc71be9ee9b2d3a1ec85a464fc6f5c06669e8d07b61bba",
+    "baseSymbol": "ETH",
+    "quoteSymbol": "USDT",
+    "open": 1717.2,
+    "high": 1717.2,
+    "low": 1717.2,
+    "close": 1717.2,
+    "liquidityUsd": 1183051.12,
+    "volumeH24": 2214053.11,
+    "sampleCount": 1
+  }
+]

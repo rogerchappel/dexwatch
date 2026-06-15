@@ -1,0 +1,2 @@
+bucketStart,bucketMinutes,chainId,dexId,pairAddress,baseSymbol,quoteSymbol,open,high,low,close,liquidityUsd,volumeH24,sampleCount
+2026-06-15T04:00:00.000Z,60,ethereum,uniswap,0x2287a9620adcbf6250dc71be9ee9b2d3a1ec85a464fc6f5c06669e8d07b61bba,ETH,USDT,1717.2,1717.2,1717.2,1717.2,1183051.12,2214053.11,1
