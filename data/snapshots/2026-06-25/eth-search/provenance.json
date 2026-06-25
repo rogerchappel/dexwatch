@@ -1,0 +1,9 @@
+{
+  "tool": "dexwatch",
+  "source": "https://api.dexscreener.com/latest/dex/search?q=ETH",
+  "capturedAt": "2026-06-25T04:36:37.387Z",
+  "inputSha256": "8b32bfdb786ee055c6e13bcaa634436956f6a701d233f68e2538b110a0038d91",
+  "network": "explicit",
+  "filters": {},
+  "warnings": []
+}
