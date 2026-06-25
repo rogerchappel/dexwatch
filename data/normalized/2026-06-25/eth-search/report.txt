@@ -1,0 +1,8 @@
+dexwatch inspect report
+source: /Users/roger/Developer/my-opensource/dexwatch/data/snapshots/2026-06-25/eth-search/snapshot.json
+captured: 2026-06-25T04:36:45.278Z
+pools: 23
+chains: base:1, bsc:11, ethereum:3, solana:5, starknet:3
+liquidityUsd: 2440284862.24
+volumeH24: 72160104.07
+ohlcRows: 23

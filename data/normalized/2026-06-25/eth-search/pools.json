@@ -1,0 +1,577 @@
+[
+  {
+    "chainId": "bsc",
+    "dexId": "pancakeswap",
+    "pairAddress": "0x9f599f3d64a9d99ea21e68127bb6ce99f893da61",
+    "url": "https://dexscreener.com/bsc/0x9f599f3d64a9d99ea21e68127bb6ce99f893da61",
+    "baseToken": {
+      "address": "0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+      "name": "Ethereum Token",
+      "symbol": "ETH"
+    },
+    "quoteToken": {
+      "address": "0x55d398326f99059ff775485246999027b3197955",
+      "name": "Tether USD",
+      "symbol": "USDT"
+    },
+    "priceUsd": 1618.065,
+    "priceNative": 1618.06519,
+    "liquidityUsd": 1278303.01,
+    "volumeH24": 6026276,
+    "txnsH24": 40157,
+    "fdv": 817096645,
+    "marketCap": 817096645,
+    "pairCreatedAt": "2023-05-06T09:26:45.000Z",
+    "capturedAt": "2026-06-25T04:36:45.278Z"
+  },
+  {
+    "chainId": "bsc",
+    "dexId": "pancakeswap",
+    "pairAddress": "0x62fcb3c1794fb95bd8b1a97f6ad5d8a7e4943a1e",
+    "url": "https://dexscreener.com/bsc/0x62fcb3c1794fb95bd8b1a97f6ad5d8a7e4943a1e",
+    "baseToken": {
+      "address": "0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+      "name": "Ethereum Token",
+      "symbol": "ETH"
+    },
+    "quoteToken": {
+      "address": "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+      "name": "Wrapped BNB",
+      "symbol": "WBNB"
+    },
+    "priceUsd": 1617.81,
+    "priceNative": 2.8681,
+    "liquidityUsd": 659708.86,
+    "volumeH24": 10462781.57,
+    "txnsH24": 24691,
+    "fdv": 816971708,
+    "marketCap": 816971708,
+    "pairCreatedAt": "2023-04-16T06:10:14.000Z",
+    "capturedAt": "2026-06-25T04:36:45.278Z"
+  },
+  {
+    "chainId": "bsc",
+    "dexId": "pancakeswap",
+    "pairAddress": "0x531febfeb9a61d948c384acfbe6dcc51057aea7e",
+    "url": "https://dexscreener.com/bsc/0x531febfeb9a61d948c384acfbe6dcc51057aea7e",
+    "baseToken": {
+      "address": "0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+      "name": "Ethereum Token",
+      "symbol": "ETH"
+    },
+    "quoteToken": {
+      "address": "0x55d398326f99059ff775485246999027b3197955",
+      "name": "Tether USD",
+      "symbol": "USDT"
+    },
+    "priceUsd": 1621.95,
+    "priceNative": 1621.9512,
+    "liquidityUsd": 1432458.18,
+    "volumeH24": 184204.87,
+    "txnsH24": 8173,
+    "fdv": 819059057,
+    "marketCap": 819059057,
+    "pairCreatedAt": "2021-04-24T15:15:31.000Z",
+    "capturedAt": "2026-06-25T04:36:45.278Z"
+  },
+  {
+    "chainId": "ethereum",
+    "dexId": "uniswap",
+    "pairAddress": "0x2287a9620adcbf6250dc71be9ee9b2d3a1ec85a464fc6f5c06669e8d07b61bba",
+    "url": "https://dexscreener.com/ethereum/0x2287a9620adcbf6250dc71be9ee9b2d3a1ec85a464fc6f5c06669e8d07b61bba",
+    "baseToken": {
+      "address": "0x0000000000000000000000000000000000000000",
+      "name": "Ether",
+      "symbol": "ETH"
+    },
+    "quoteToken": {
+      "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "name": "Tether USD",
+      "symbol": "USDT"
+    },
+    "priceUsd": 1617.71,
+    "priceNative": 1617.7111,
+    "liquidityUsd": 1168592.36,
+    "volumeH24": 3855435.84,
+    "txnsH24": 5085,
+    "fdv": 0,
+    "marketCap": 0,
+    "pairCreatedAt": "2025-01-31T16:09:59.000Z",
+    "capturedAt": "2026-06-25T04:36:45.278Z"
+  },
+  {
+    "chainId": "ethereum",
+    "dexId": "uniswap",
+    "pairAddress": "0x00b9edc1583bf6ef09ff3a09f6c23ecb57fd7d0bb75625717ec81eed181e22d7",
+    "url": "https://dexscreener.com/ethereum/0x00b9edc1583bf6ef09ff3a09f6c23ecb57fd7d0bb75625717ec81eed181e22d7",
+    "baseToken": {
+      "address": "0x0000000000000000000000000000000000000000",
+      "name": "Ether",
+      "symbol": "ETH"
+    },
+    "quoteToken": {
+      "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "name": "USD Coin",
+      "symbol": "USDC"
+    },
+    "priceUsd": 1615.86,
+    "priceNative": 1615.8616,
+    "liquidityUsd": 508656.43,
+    "volumeH24": 1459198.08,
+    "txnsH24": 4389,
+    "fdv": 0,
+    "marketCap": 0,
+    "pairCreatedAt": "2025-01-24T19:02:59.000Z",
+    "capturedAt": "2026-06-25T04:36:45.278Z"
+  },
+  {
+    "chainId": "starknet",
+    "dexId": "ekubo",
+    "pairAddress": "0x033068f6539f8e6e6b131e6b2b814e6c34a5224bc66947c47dab9dfee93b35fb-0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7-170141183460469235273462165868118016-1000-0x0",
+    "url": "https://dexscreener.com/starknet/0x033068f6539f8e6e6b131e6b2b814e6c34a5224bc66947c47dab9dfee93b35fb-0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7-170141183460469235273462165868118016-1000-0x0",
+    "baseToken": {
+      "address": "0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7",
+      "name": "Ether",
+      "symbol": "ETH"
+    },
+    "quoteToken": {
+      "address": "0x033068f6539f8e6e6b131e6b2b814e6c34a5224bc66947c47dab9dfee93b35fb",
+      "name": "USDC",
+      "symbol": "USDC"
+    },
+    "priceUsd": 1616.54,
+    "priceNative": 1616.5459,
+    "liquidityUsd": 931084.81,
+    "volumeH24": 2153416.8,
+    "txnsH24": 3698,
+    "fdv": 37469364,
+    "marketCap": 37469364,
+    "pairCreatedAt": "2025-12-01T10:29:24.000Z",
+    "capturedAt": "2026-06-25T04:36:45.278Z"
+  },
+  {
+    "chainId": "bsc",
+    "dexId": "pancakeswap",
+    "pairAddress": "0xd0e226f674bbf064f54ab47f42473ff80db98cba",
+    "url": "https://dexscreener.com/bsc/0xd0e226f674bbf064f54ab47f42473ff80db98cba",
+    "baseToken": {
+      "address": "0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+      "name": "Ethereum Token",
+      "symbol": "ETH"
+    },
+    "quoteToken": {
+      "address": "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+      "name": "Wrapped BNB",
+      "symbol": "WBNB"
+    },
+    "priceUsd": 1617.12,
+    "priceNative": 2.867,
+    "liquidityUsd": 10416459.74,
+    "volumeH24": 9092836.65,
+    "txnsH24": 5934,
+    "fdv": 816621920,
+    "marketCap": 816621920,
+    "pairCreatedAt": "2023-04-03T15:38:08.000Z",
+    "capturedAt": "2026-06-25T04:36:45.278Z"
+  },
+  {
+    "chainId": "starknet",
+    "dexId": "ekubo",
+    "pairAddress": "0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7-0x053c91253bc9682c04929ca02ed00b3e423f6710d2ee7e0d5ebb06f3ecf368a8-170141183460469235273462165868118016-1000-0x0",
+    "url": "https://dexscreener.com/starknet/0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7-0x053c91253bc9682c04929ca02ed00b3e423f6710d2ee7e0d5ebb06f3ecf368a8-170141183460469235273462165868118016-1000-0x0",
+    "baseToken": {
+      "address": "0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7",
+      "name": "Ether",
+      "symbol": "ETH"
+    },
+    "quoteToken": {
+      "address": "0x053c91253bc9682c04929ca02ed00b3e423f6710d2ee7e0d5ebb06f3ecf368a8",
+      "name": "USD Coin",
+      "symbol": "USDC"
+    },
+    "priceUsd": 1617.25,
+    "priceNative": 1617.2547,
+    "liquidityUsd": 331256.58,
+    "volumeH24": 339597.12,
+    "txnsH24": 2351,
+    "fdv": 37485794,
+    "marketCap": 37485794,
+    "pairCreatedAt": "2023-08-26T12:29:12.000Z",
+    "capturedAt": "2026-06-25T04:36:45.278Z"
+  },
+  {
+    "chainId": "bsc",
+    "dexId": "pancakeswap",
+    "pairAddress": "0xbe141893e4c6ad9272e8c04bab7e6a10604501a5",
+    "url": "https://dexscreener.com/bsc/0xbe141893e4c6ad9272e8c04bab7e6a10604501a5",
+    "baseToken": {
+      "address": "0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+      "name": "Ethereum Token",
+      "symbol": "ETH"
+    },
+    "quoteToken": {
+      "address": "0x55d398326f99059ff775485246999027b3197955",
+      "name": "Tether USD",
+      "symbol": "USDT"
+    },
+    "priceUsd": 1617.77,
+    "priceNative": 1617.7718,
+    "liquidityUsd": 3567094.17,
+    "volumeH24": 1787573.66,
+    "txnsH24": 7814,
+    "fdv": 816948512,
+    "marketCap": 816948512,
+    "pairCreatedAt": "2023-04-11T12:00:32.000Z",
+    "capturedAt": "2026-06-25T04:36:45.278Z"
+  },
+  {
+    "chainId": "starknet",
+    "dexId": "ekubo",
+    "pairAddress": "0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7-0x0787150e306e6eae6e3f79dea881770e8bbff2c1b8eb490f969669ee945b3135-170141183460469235273462165868118016-1000-0x0",
+    "url": "https://dexscreener.com/starknet/0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7-0x0787150e306e6eae6e3f79dea881770e8bbff2c1b8eb490f969669ee945b3135-170141183460469235273462165868118016-1000-0x0",
+    "baseToken": {
+      "address": "0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7",
+      "name": "Ether",
+      "symbol": "ETH"
+    },
+    "quoteToken": {
+      "address": "0x0787150e306e6eae6e3f79dea881770e8bbff2c1b8eb490f969669ee945b3135",
+      "name": "strkBTC",
+      "symbol": "STRKBTC"
+    },
+    "priceUsd": 1616.98,
+    "priceNative": 0.0266,
+    "liquidityUsd": 750096.38,
+    "volumeH24": 449938.13,
+    "txnsH24": 1082,
+    "fdv": 37479627,
+    "marketCap": 37479627,
+    "pairCreatedAt": "2026-05-08T11:06:47.000Z",
+    "capturedAt": "2026-06-25T04:36:45.278Z"
+  },
+  {
+    "chainId": "solana",
+    "dexId": "raydium",
+    "pairAddress": "7j8ah2hekywr4agetlvhoikuxkbhanecbqvxw7iasmwc",
+    "url": "https://dexscreener.com/solana/7j8ah2hekywr4agetlvhoikuxkbhanecbqvxw7iasmwc",
+    "baseToken": {
+      "address": "2najsqzltfhmmc6z65mmn8h73r3fyguzjw4vm1kxfa8c",
+      "name": "Ethereum",
+      "symbol": "ETH"
+    },
+    "quoteToken": {
+      "address": "epjfwdd5aufqssqem2qn1xzybapc8g4weggkzwytdt1v",
+      "name": "USD Coin",
+      "symbol": "USDC"
+    },
+    "priceUsd": 1992.051,
+    "priceNative": 1992.05124,
+    "liquidityUsd": 139443614.45,
+    "volumeH24": 72456.37,
+    "txnsH24": 14,
+    "fdv": 159364100,
+    "marketCap": 159364100,
+    "pairCreatedAt": "2026-03-27T12:15:22.000Z",
+    "capturedAt": "2026-06-25T04:36:45.278Z"
+  },
+  {
+    "chainId": "solana",
+    "dexId": "raydium",
+    "pairAddress": "bw972lkqyyggjwoe1cnmlq4durufpvm2gcgzjj97tqep",
+    "url": "https://dexscreener.com/solana/bw972lkqyyggjwoe1cnmlq4durufpvm2gcgzjj97tqep",
+    "baseToken": {
+      "address": "ethqqsrvw47u2xhagdufjgcyws3rjknb773fbkxsavc6",
+      "name": "Ethereum",
+      "symbol": "ETH"
+    },
+    "quoteToken": {
+      "address": "epjfwdd5aufqssqem2qn1xzybapc8g4weggkzwytdt1v",
+      "name": "USD Coin",
+      "symbol": "USDC"
+    },
+    "priceUsd": 2928.66,
+    "priceNative": 2928.6618,
+    "liquidityUsd": 175719743.46,
+    "volumeH24": 72456.37,
+    "txnsH24": 14,
+    "fdv": 351436494,
+    "marketCap": 351436494,
+    "pairCreatedAt": "2026-01-21T14:02:04.000Z",
+    "capturedAt": "2026-06-25T04:36:45.278Z"
+  },
+  {
+    "chainId": "solana",
+    "dexId": "raydium",
+    "pairAddress": "jadb1gwqtemrxfhtbah9ktgspdu4xzybj6asz8ru4ekx",
+    "url": "https://dexscreener.com/solana/jadb1gwqtemrxfhtbah9ktgspdu4xzybj6asz8ru4ekx",
+    "baseToken": {
+      "address": "azvekc6ogux32qdtyycdpm2crrv5lxkpdarwzduzcqzq",
+      "name": "ETH",
+      "symbol": "ETH"
+    },
+    "quoteToken": {
+      "address": "epjfwdd5aufqssqem2qn1xzybapc8g4weggkzwytdt1v",
+      "name": "USD Coin",
+      "symbol": "USDC"
+    },
+    "priceUsd": 2366.84,
+    "priceNative": 2366.8412,
+    "liquidityUsd": 188406977.65,
+    "volumeH24": 72456.37,
+    "txnsH24": 14,
+    "fdv": 189347300,
+    "marketCap": 189347300,
+    "pairCreatedAt": "2026-04-18T10:08:31.000Z",
+    "capturedAt": "2026-06-25T04:36:45.278Z"
+  },
+  {
+    "chainId": "solana",
+    "dexId": "raydium",
+    "pairAddress": "f5g1bcpsut9cknmph9tnzqngh653hxmen9p3qbocmqpw",
+    "url": "https://dexscreener.com/solana/f5g1bcpsut9cknmph9tnzqngh653hxmen9p3qbocmqpw",
+    "baseToken": {
+      "address": "ethqhetwbdf7nyxtpk8xcxqayvtvib29y7vesfebihi1",
+      "name": "ETH",
+      "symbol": "ETH"
+    },
+    "quoteToken": {
+      "address": "epjfwdd5aufqssqem2qn1xzybapc8g4weggkzwytdt1v",
+      "name": "USD Coin",
+      "symbol": "USDC"
+    },
+    "priceUsd": 2253.89,
+    "priceNative": 2253.8924,
+    "liquidityUsd": 1802854590.13,
+    "volumeH24": 72456.37,
+    "txnsH24": 14,
+    "fdv": 1803113974,
+    "marketCap": 1803113974,
+    "pairCreatedAt": "2026-05-15T10:37:11.000Z",
+    "capturedAt": "2026-06-25T04:36:45.278Z"
+  },
+  {
+    "chainId": "solana",
+    "dexId": "raydium",
+    "pairAddress": "dlnbmznjqn9rm1g31nxnxlwbzrd2wptsgwwb1lwhymjd",
+    "url": "https://dexscreener.com/solana/dlnbmznjqn9rm1g31nxnxlwbzrd2wptsgwwb1lwhymjd",
+    "baseToken": {
+      "address": "ethkw8b2jm2rtphjsmjsswkjorjhpimset6vvkz4iamx",
+      "name": "ETH",
+      "symbol": "ETH"
+    },
+    "quoteToken": {
+      "address": "epjfwdd5aufqssqem2qn1xzybapc8g4weggkzwytdt1v",
+      "name": "USD Coin",
+      "symbol": "USDC"
+    },
+    "priceUsd": 1925.65,
+    "priceNative": 1925.6557,
+    "liquidityUsd": 78951918.34,
+    "volumeH24": 72456.27,
+    "txnsH24": 14,
+    "fdv": 154052463,
+    "marketCap": 154052463,
+    "pairCreatedAt": "2026-02-13T06:34:31.000Z",
+    "capturedAt": "2026-06-25T04:36:45.278Z"
+  },
+  {
+    "chainId": "bsc",
+    "dexId": "uniswap",
+    "pairAddress": "0x0f338ec12d3f7c3d77a4b9fcc1f95f3fb6ad0ea6",
+    "url": "https://dexscreener.com/bsc/0x0f338ec12d3f7c3d77a4b9fcc1f95f3fb6ad0ea6",
+    "baseToken": {
+      "address": "0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+      "name": "Ethereum Token",
+      "symbol": "ETH"
+    },
+    "quoteToken": {
+      "address": "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+      "name": "Wrapped BNB",
+      "symbol": "WBNB"
+    },
+    "priceUsd": 1617.23,
+    "priceNative": 2.8671,
+    "liquidityUsd": 3522701.3,
+    "volumeH24": 5941849.16,
+    "txnsH24": 5008,
+    "fdv": 816678994,
+    "marketCap": 816678994,
+    "pairCreatedAt": "2023-03-15T20:13:27.000Z",
+    "capturedAt": "2026-06-25T04:36:45.278Z"
+  },
+  {
+    "chainId": "bsc",
+    "dexId": "topaz",
+    "pairAddress": "0x7955874b0ad6efbb5ffe6e93e50b8aef4cd9be53",
+    "url": "https://dexscreener.com/bsc/0x7955874b0ad6efbb5ffe6e93e50b8aef4cd9be53",
+    "baseToken": {
+      "address": "0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+      "name": "Ethereum Token",
+      "symbol": "ETH"
+    },
+    "quoteToken": {
+      "address": "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+      "name": "Wrapped BNB",
+      "symbol": "WBNB"
+    },
+    "priceUsd": 1617.84,
+    "priceNative": 2.8683,
+    "liquidityUsd": 49929.06,
+    "volumeH24": 1205031.64,
+    "txnsH24": 11117,
+    "fdv": 816987823,
+    "marketCap": 816987823,
+    "pairCreatedAt": "1970-01-01T00:00:00.000Z",
+    "capturedAt": "2026-06-25T04:36:45.278Z"
+  },
+  {
+    "chainId": "bsc",
+    "dexId": "pancakeswap",
+    "pairAddress": "0x4bba1018b967e59220b22ca03f68821a3276c9a6",
+    "url": "https://dexscreener.com/bsc/0x4bba1018b967e59220b22ca03f68821a3276c9a6",
+    "baseToken": {
+      "address": "0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+      "name": "Ethereum Token",
+      "symbol": "ETH"
+    },
+    "quoteToken": {
+      "address": "0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c",
+      "name": "BTCB Token",
+      "symbol": "BTCB"
+    },
+    "priceUsd": 1615.082,
+    "priceNative": 0.02659,
+    "liquidityUsd": 3567769.58,
+    "volumeH24": 5656509.52,
+    "txnsH24": 4495,
+    "fdv": 815590354,
+    "marketCap": 815590354,
+    "pairCreatedAt": "2023-04-03T18:44:22.000Z",
+    "capturedAt": "2026-06-25T04:36:45.278Z"
+  },
+  {
+    "chainId": "bsc",
+    "dexId": "topaz",
+    "pairAddress": "0xf0ea5a817ae0d2882a1a128f2c5227a5eb676acc",
+    "url": "https://dexscreener.com/bsc/0xf0ea5a817ae0d2882a1a128f2c5227a5eb676acc",
+    "baseToken": {
+      "address": "0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+      "name": "Ethereum Token",
+      "symbol": "ETH"
+    },
+    "quoteToken": {
+      "address": "0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c",
+      "name": "BTCB Token",
+      "symbol": "BTCB"
+    },
+    "priceUsd": 1617.15,
+    "priceNative": 0.02659,
+    "liquidityUsd": 58179.56,
+    "volumeH24": 1435358.53,
+    "txnsH24": 9366,
+    "fdv": 816636637,
+    "marketCap": 816636637,
+    "pairCreatedAt": "1970-01-01T00:00:00.000Z",
+    "capturedAt": "2026-06-25T04:36:45.278Z"
+  },
+  {
+    "chainId": "bsc",
+    "dexId": "uniswap",
+    "pairAddress": "0xf9878a5dd55edc120fde01893ea713a4f032229c",
+    "url": "https://dexscreener.com/bsc/0xf9878a5dd55edc120fde01893ea713a4f032229c",
+    "baseToken": {
+      "address": "0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+      "name": "Ethereum Token",
+      "symbol": "ETH"
+    },
+    "quoteToken": {
+      "address": "0x55d398326f99059ff775485246999027b3197955",
+      "name": "Tether USD",
+      "symbol": "USDT"
+    },
+    "priceUsd": 1617.64,
+    "priceNative": 1617.6437,
+    "liquidityUsd": 133210.68,
+    "volumeH24": 152941.66,
+    "txnsH24": 3740,
+    "fdv": 816883846,
+    "marketCap": 816883846,
+    "pairCreatedAt": "2023-03-31T04:47:42.000Z",
+    "capturedAt": "2026-06-25T04:36:45.278Z"
+  },
+  {
+    "chainId": "ethereum",
+    "dexId": "uniswap",
+    "pairAddress": "0x72331fcb696b0151904c03584b66dc8365bc63f8a144d89a773384e3a579ca73",
+    "url": "https://dexscreener.com/ethereum/0x72331fcb696b0151904c03584b66dc8365bc63f8a144d89a773384e3a579ca73",
+    "baseToken": {
+      "address": "0x0000000000000000000000000000000000000000",
+      "name": "Ether",
+      "symbol": "ETH"
+    },
+    "quoteToken": {
+      "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "name": "Tether USD",
+      "symbol": "USDT"
+    },
+    "priceUsd": 1617.86,
+    "priceNative": 1617.8692,
+    "liquidityUsd": 25498048.96,
+    "volumeH24": 20766049.36,
+    "txnsH24": 3061,
+    "fdv": 0,
+    "marketCap": 0,
+    "pairCreatedAt": "2025-01-27T22:08:23.000Z",
+    "capturedAt": "2026-06-25T04:36:45.278Z"
+  },
+  {
+    "chainId": "bsc",
+    "dexId": "pancakeswap",
+    "pairAddress": "0x539e0ebfffd39e54a0f7e5f8fec40ade7933a664",
+    "url": "https://dexscreener.com/bsc/0x539e0ebfffd39e54a0f7e5f8fec40ade7933a664",
+    "baseToken": {
+      "address": "0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+      "name": "Ethereum Token",
+      "symbol": "ETH"
+    },
+    "quoteToken": {
+      "address": "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+      "name": "USD Coin",
+      "symbol": "USDC"
+    },
+    "priceUsd": 1616.93,
+    "priceNative": 1616.9393,
+    "liquidityUsd": 78802.54,
+    "volumeH24": 56658.53,
+    "txnsH24": 3202,
+    "fdv": 816528118,
+    "marketCap": 816528118,
+    "pairCreatedAt": "2023-04-01T13:33:59.000Z",
+    "capturedAt": "2026-06-25T04:36:45.278Z"
+  },
+  {
+    "chainId": "base",
+    "dexId": "uniswap",
+    "pairAddress": "0x96d4b53a38337a5733179751781178a2613306063c511b78cd02684739288c0a",
+    "url": "https://dexscreener.com/base/0x96d4b53a38337a5733179751781178a2613306063c511b78cd02684739288c0a",
+    "baseToken": {
+      "address": "0x0000000000000000000000000000000000000000",
+      "name": "Ether",
+      "symbol": "ETH"
+    },
+    "quoteToken": {
+      "address": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+      "name": "USD Coin",
+      "symbol": "USDC"
+    },
+    "priceUsd": 1615.77,
+    "priceNative": 1615.7734,
+    "liquidityUsd": 955666.01,
+    "volumeH24": 772165.2,
+    "txnsH24": 7103,
+    "fdv": 0,
+    "marketCap": 0,
+    "pairCreatedAt": "2025-01-22T15:07:37.000Z",
+    "capturedAt": "2026-06-25T04:36:45.278Z"
+  }
+]
