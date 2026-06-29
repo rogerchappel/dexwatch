@@ -1,0 +1,19 @@
+{
+  "tool": "dexwatch",
+  "source": "/Users/roger/Developer/my-opensource/dexwatch/data/snapshots/2026-06-29/eth-search/snapshot.json",
+  "capturedAt": "2026-06-29T04:36:36.434Z",
+  "inputSha256": "f68cad44ba2480cfb966e7be07e359cbdf1bc4b0141694be3387d0261d59cca4",
+  "network": "none",
+  "filters": {
+    "chains": [
+      "ethereum"
+    ],
+    "dexes": [],
+    "symbols": [],
+    "min": {
+      "liquidityUsd": 10000
+    },
+    "max": {}
+  },
+  "warnings": []
+}
