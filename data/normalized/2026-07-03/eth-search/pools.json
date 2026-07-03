@@ -1,0 +1,52 @@
+[
+  {
+    "chainId": "ethereum",
+    "dexId": "uniswap",
+    "pairAddress": "0x2287a9620adcbf6250dc71be9ee9b2d3a1ec85a464fc6f5c06669e8d07b61bba",
+    "url": "https://dexscreener.com/ethereum/0x2287a9620adcbf6250dc71be9ee9b2d3a1ec85a464fc6f5c06669e8d07b61bba",
+    "baseToken": {
+      "address": "0x0000000000000000000000000000000000000000",
+      "name": "Ether",
+      "symbol": "ETH"
+    },
+    "quoteToken": {
+      "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "name": "Tether USD",
+      "symbol": "USDT"
+    },
+    "priceUsd": 1704.54,
+    "priceNative": 1704.5456,
+    "liquidityUsd": 1181211.26,
+    "volumeH24": 3283172.26,
+    "txnsH24": 4569,
+    "fdv": 0,
+    "marketCap": 0,
+    "pairCreatedAt": "2025-01-31T16:09:59.000Z",
+    "capturedAt": "2026-07-03T04:37:34.300Z"
+  },
+  {
+    "chainId": "ethereum",
+    "dexId": "uniswap",
+    "pairAddress": "0x00b9edc1583bf6ef09ff3a09f6c23ecb57fd7d0bb75625717ec81eed181e22d7",
+    "url": "https://dexscreener.com/ethereum/0x00b9edc1583bf6ef09ff3a09f6c23ecb57fd7d0bb75625717ec81eed181e22d7",
+    "baseToken": {
+      "address": "0x0000000000000000000000000000000000000000",
+      "name": "Ether",
+      "symbol": "ETH"
+    },
+    "quoteToken": {
+      "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "name": "USD Coin",
+      "symbol": "USDC"
+    },
+    "priceUsd": 1703.025,
+    "priceNative": 1703.02552,
+    "liquidityUsd": 517401.35,
+    "volumeH24": 1409173.11,
+    "txnsH24": 3042,
+    "fdv": 0,
+    "marketCap": 0,
+    "pairCreatedAt": "2025-01-24T19:02:59.000Z",
+    "capturedAt": "2026-07-03T04:37:34.300Z"
+  }
+]

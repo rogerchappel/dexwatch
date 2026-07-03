@@ -1,0 +1,34 @@
+[
+  {
+    "bucketStart": "2026-07-03T04:00:00.000Z",
+    "bucketMinutes": 60,
+    "chainId": "ethereum",
+    "dexId": "uniswap",
+    "pairAddress": "0x2287a9620adcbf6250dc71be9ee9b2d3a1ec85a464fc6f5c06669e8d07b61bba",
+    "baseSymbol": "ETH",
+    "quoteSymbol": "USDT",
+    "open": 1704.54,
+    "high": 1704.54,
+    "low": 1704.54,
+    "close": 1704.54,
+    "liquidityUsd": 1181211.26,
+    "volumeH24": 3283172.26,
+    "sampleCount": 1
+  },
+  {
+    "bucketStart": "2026-07-03T04:00:00.000Z",
+    "bucketMinutes": 60,
+    "chainId": "ethereum",
+    "dexId": "uniswap",
+    "pairAddress": "0x00b9edc1583bf6ef09ff3a09f6c23ecb57fd7d0bb75625717ec81eed181e22d7",
+    "baseSymbol": "ETH",
+    "quoteSymbol": "USDC",
+    "open": 1703.025,
+    "high": 1703.025,
+    "low": 1703.025,
+    "close": 1703.025,
+    "liquidityUsd": 517401.35,
+    "volumeH24": 1409173.11,
+    "sampleCount": 1
+  }
+]

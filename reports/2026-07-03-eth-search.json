@@ -1,0 +1,115 @@
+{
+  "summary": {
+    "poolCount": 2,
+    "chains": {
+      "ethereum": 2
+    },
+    "liquidityUsd": 1698612.6099999999,
+    "volumeH24": 4692345.37
+  },
+  "pools": [
+    {
+      "chainId": "ethereum",
+      "dexId": "uniswap",
+      "pairAddress": "0x2287a9620adcbf6250dc71be9ee9b2d3a1ec85a464fc6f5c06669e8d07b61bba",
+      "url": "https://dexscreener.com/ethereum/0x2287a9620adcbf6250dc71be9ee9b2d3a1ec85a464fc6f5c06669e8d07b61bba",
+      "baseToken": {
+        "address": "0x0000000000000000000000000000000000000000",
+        "name": "Ether",
+        "symbol": "ETH"
+      },
+      "quoteToken": {
+        "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+        "name": "Tether USD",
+        "symbol": "USDT"
+      },
+      "priceUsd": 1704.54,
+      "priceNative": 1704.5456,
+      "liquidityUsd": 1181211.26,
+      "volumeH24": 3283172.26,
+      "txnsH24": 4569,
+      "fdv": 0,
+      "marketCap": 0,
+      "pairCreatedAt": "2025-01-31T16:09:59.000Z",
+      "capturedAt": "2026-07-03T04:37:34.238Z"
+    },
+    {
+      "chainId": "ethereum",
+      "dexId": "uniswap",
+      "pairAddress": "0x00b9edc1583bf6ef09ff3a09f6c23ecb57fd7d0bb75625717ec81eed181e22d7",
+      "url": "https://dexscreener.com/ethereum/0x00b9edc1583bf6ef09ff3a09f6c23ecb57fd7d0bb75625717ec81eed181e22d7",
+      "baseToken": {
+        "address": "0x0000000000000000000000000000000000000000",
+        "name": "Ether",
+        "symbol": "ETH"
+      },
+      "quoteToken": {
+        "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "name": "USD Coin",
+        "symbol": "USDC"
+      },
+      "priceUsd": 1703.025,
+      "priceNative": 1703.02552,
+      "liquidityUsd": 517401.35,
+      "volumeH24": 1409173.11,
+      "txnsH24": 3042,
+      "fdv": 0,
+      "marketCap": 0,
+      "pairCreatedAt": "2025-01-24T19:02:59.000Z",
+      "capturedAt": "2026-07-03T04:37:34.238Z"
+    }
+  ],
+  "ohlcRows": [
+    {
+      "bucketStart": "2026-07-03T04:00:00.000Z",
+      "bucketMinutes": 60,
+      "chainId": "ethereum",
+      "dexId": "uniswap",
+      "pairAddress": "0x2287a9620adcbf6250dc71be9ee9b2d3a1ec85a464fc6f5c06669e8d07b61bba",
+      "baseSymbol": "ETH",
+      "quoteSymbol": "USDT",
+      "open": 1704.54,
+      "high": 1704.54,
+      "low": 1704.54,
+      "close": 1704.54,
+      "liquidityUsd": 1181211.26,
+      "volumeH24": 3283172.26,
+      "sampleCount": 1
+    },
+    {
+      "bucketStart": "2026-07-03T04:00:00.000Z",
+      "bucketMinutes": 60,
+      "chainId": "ethereum",
+      "dexId": "uniswap",
+      "pairAddress": "0x00b9edc1583bf6ef09ff3a09f6c23ecb57fd7d0bb75625717ec81eed181e22d7",
+      "baseSymbol": "ETH",
+      "quoteSymbol": "USDC",
+      "open": 1703.025,
+      "high": 1703.025,
+      "low": 1703.025,
+      "close": 1703.025,
+      "liquidityUsd": 517401.35,
+      "volumeH24": 1409173.11,
+      "sampleCount": 1
+    }
+  ],
+  "provenance": {
+    "tool": "dexwatch",
+    "source": "/Users/roger/Developer/my-opensource/dexwatch/data/snapshots/2026-07-03/eth-search/snapshot.json",
+    "capturedAt": "2026-07-03T04:37:34.238Z",
+    "inputSha256": "e81d0876c32718db39d4450556d116385ca06047aa3e0e24481f64ae2ab46f97",
+    "network": "none",
+    "filters": {
+      "chains": [
+        "ethereum"
+      ],
+      "dexes": [],
+      "symbols": [],
+      "min": {
+        "liquidityUsd": 10000
+      },
+      "max": {}
+    },
+    "warnings": []
+  }
+}
