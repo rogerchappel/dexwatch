@@ -25,7 +25,8 @@
     "build": "node scripts/build.js",
     "smoke": "node scripts/smoke.js",
     "package:smoke": "npm pack --dry-run",
-    "release:check": "npm test && npm run check && npm run build && npm run smoke && npm run package:smoke"
+    "release:check": "npm test && npm run check && npm run build && npm run smoke && npm run package:smoke",
+    "lint": "npm run check"
   },
   "keywords": [
     "dexscreener",
