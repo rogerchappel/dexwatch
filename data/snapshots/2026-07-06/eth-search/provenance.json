@@ -1,0 +1,9 @@
+{
+  "tool": "dexwatch",
+  "source": "https://api.dexscreener.com/latest/dex/search?q=ethereum",
+  "capturedAt": "2026-07-06T04:37:07.959Z",
+  "inputSha256": "173de7e8098c811227a6ca4b1de362f9f1f3a4a77dd23c581d7c642f84e1dc3a",
+  "network": "explicit",
+  "filters": {},
+  "warnings": []
+}

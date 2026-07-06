@@ -1,0 +1,8 @@
+dexwatch inspect report
+source: /Users/roger/Developer/my-opensource/dexwatch/data/snapshots/2026-07-06/eth-search/snapshot.json
+captured: 2026-07-06T04:37:08.472Z
+pools: 0
+chains: none
+liquidityUsd: 0.00
+volumeH24: 0.00
+ohlcRows: 0
