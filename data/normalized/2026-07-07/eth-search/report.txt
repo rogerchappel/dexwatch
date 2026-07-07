@@ -1,0 +1,8 @@
+dexwatch inspect report
+source: /Users/roger/Developer/my-opensource/dexwatch/data/snapshots/2026-07-07/eth-search/snapshot.json
+captured: 2026-07-07T04:37:43.819Z
+pools: 2
+chains: ethereum:2
+liquidityUsd: 1714930.13
+volumeH24: 8870260.58
+ohlcRows: 2
