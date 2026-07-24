@@ -16,3 +16,20 @@ test('builds deterministic ohlc buckets', () => {
   assert.equal(rows[0].close, 1.2);
   assert.equal(rows[0].sampleCount, 2);
 });
+
+test('accepts positive decimal bucket sizes', () => {
+  const rows = buildOhlcRows([
+    { ...base, priceUsd: 1, capturedAt: '2026-05-01T00:07:00.000Z' }
+  ], { bucketMinutes: 2.5 });
+  assert.equal(rows[0].bucketMinutes, 2.5);
+  assert.equal(rows[0].bucketStart, '2026-05-01T00:05:00.000Z');
+});
+
+for (const bucketMinutes of [0, -5, Number.NaN, Number.POSITIVE_INFINITY, 'nope']) {
+  test(`rejects invalid OHLC bucket size ${String(bucketMinutes)}`, () => {
+    assert.throws(
+      () => buildOhlcRows([], { bucketMinutes }),
+      { message: 'bucketMinutes must be a finite number greater than 0' }
+    );
+  });
+}

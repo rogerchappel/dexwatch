@@ -67,6 +67,10 @@ Common filters:
 --format json
 ```
 
+Liquidity and volume minimums accept finite non-negative numbers, including
+decimals. The OHLC bucket size accepts any finite number greater than zero.
+Invalid numeric values are rejected as usage errors before files are inspected.
+
 ## Library API
 
 ```js
