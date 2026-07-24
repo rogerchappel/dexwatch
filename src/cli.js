@@ -15,9 +15,9 @@ Filters:
   --chain <id>                 Keep one chain (repeatable)
   --dex <id>                   Keep one dex (repeatable)
   --symbol <base>              Keep one base token symbol (repeatable)
-  --min-liquidity-usd <number> Minimum pool liquidity
-  --min-volume-h24 <number>    Minimum 24h volume
-  --bucket-minutes <number>    OHLC bucket size, default 60
+  --min-liquidity-usd <number> Minimum pool liquidity (finite, >= 0)
+  --min-volume-h24 <number>    Minimum 24h volume (finite, >= 0)
+  --bucket-minutes <number>    OHLC bucket size (finite, > 0), default 60
   --format json|text           Stdout format, default text
 
 Safety:

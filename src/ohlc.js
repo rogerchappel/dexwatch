@@ -1,3 +1,5 @@
+import { DexwatchError } from './errors.js';
+
 function bucketStart(isoTimestamp, bucketMinutes) {
   const sizeMs = bucketMinutes * 60 * 1000;
   const ms = new Date(isoTimestamp).getTime();
@@ -10,6 +12,9 @@ function rowKey(pool, bucket) {
 
 export function buildOhlcRows(pools, options = {}) {
   const bucketMinutes = Number(options.bucketMinutes ?? 60);
+  if (!Number.isFinite(bucketMinutes) || bucketMinutes <= 0) {
+    throw new DexwatchError('bucketMinutes must be a finite number greater than 0');
+  }
   const buckets = new Map();
 
   for (const pool of pools) {
