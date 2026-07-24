@@ -11,6 +11,11 @@ format and uses semantic versioning when versioned releases are published.
 
 - Initial project setup.
 
+### Fixed
+
+- Reject invalid liquidity, volume, and OHLC bucket CLI values with actionable
+  usage errors, and validate bucket sizes at the library boundary.
+
 ## Release Links
 
 - Unreleased:
