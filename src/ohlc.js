@@ -10,6 +10,22 @@ function rowKey(pool, bucket) {
   return [pool.chainId, pool.dexId, pool.pairAddress, bucket].join('|');
 }
 
+function compareSamples(a, b) {
+  return a.capturedAt.localeCompare(b.capturedAt)
+    || a.baseToken.symbol.localeCompare(b.baseToken.symbol)
+    || a.quoteToken.symbol.localeCompare(b.quoteToken.symbol)
+    || a.priceUsd - b.priceUsd
+    || a.liquidityUsd - b.liquidityUsd
+    || a.volumeH24 - b.volumeH24;
+}
+
+function compareRows(a, b) {
+  return a.bucketStart.localeCompare(b.bucketStart)
+    || a.chainId.localeCompare(b.chainId)
+    || a.dexId.localeCompare(b.dexId)
+    || a.pairAddress.localeCompare(b.pairAddress);
+}
+
 export function buildOhlcRows(pools, options = {}) {
   const bucketMinutes = Number(options.bucketMinutes ?? 60);
   if (!Number.isFinite(bucketMinutes) || bucketMinutes <= 0) {
@@ -17,7 +33,7 @@ export function buildOhlcRows(pools, options = {}) {
   }
   const buckets = new Map();
 
-  for (const pool of pools) {
+  for (const pool of [...pools].sort(compareSamples)) {
     const bucket = bucketStart(pool.capturedAt, bucketMinutes);
     const key = rowKey(pool, bucket);
     const previous = buckets.get(key);
@@ -49,5 +65,5 @@ export function buildOhlcRows(pools, options = {}) {
     }
   }
 
-  return [...buckets.values()].sort((a, b) => a.bucketStart.localeCompare(b.bucketStart) || a.chainId.localeCompare(b.chainId));
+  return [...buckets.values()].sort(compareRows);
 }
