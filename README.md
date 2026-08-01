@@ -44,7 +44,7 @@ Outputs:
 - `pools.json` normalized pool records
 - `ohlc.json` OHLC-style rows
 - `ohlc.csv` spreadsheet/backtest-friendly rows
-- `provenance.json` source, capture time, filters, and input hash
+- `provenance.json` source, capture time, filters, OHLC bucket size, and input hash
 - `report.txt` human-readable summary
 
 ## CLI
@@ -70,6 +70,13 @@ Common filters:
 Liquidity and volume minimums accept finite non-negative numbers, including
 decimals. The OHLC bucket size accepts any finite number greater than zero.
 Invalid numeric values are rejected as usage errors before files are inspected.
+
+OHLC samples are ordered by `capturedAt`, so `open` is the earliest price and
+`close`, `liquidityUsd`, and `volumeH24` come from the latest sample. Samples
+with the same timestamp are ordered by base symbol, quote symbol, price,
+liquidity, then volume. Exported rows are ordered by bucket start, chain, DEX,
+and pair address. These complete ordering keys make exports identical for every
+permutation of the same samples.
 
 ## Library API
 
