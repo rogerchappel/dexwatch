@@ -12,6 +12,7 @@ export function buildProvenance({ source, rawText, capturedAt, options = {} }) {
     inputSha256: sha256(rawText),
     network: options.network === true ? 'explicit' : 'none',
     filters: options.filters ?? {},
+    ...(options.bucketMinutes === undefined ? {} : { bucketMinutes: options.bucketMinutes }),
     warnings: options.warnings ?? []
   };
 }
