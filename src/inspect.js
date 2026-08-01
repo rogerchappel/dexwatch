@@ -9,11 +9,12 @@ import { formatHumanReport, summarizePools } from './report.js';
 
 export async function inspectPath(inputPath, options = {}) {
   const capturedAt = options.capturedAt ?? new Date().toISOString();
+  const bucketMinutes = options.bucketMinutes ?? 60;
   const { source, rawText, json } = await readJsonSource(inputPath);
   const allPools = parseDexScreenerSnapshot(json, { capturedAt });
   const pools = filterPools(allPools, options.filters ?? {});
-  const ohlcRows = buildOhlcRows(pools, { bucketMinutes: options.bucketMinutes ?? 60 });
-  const provenance = buildProvenance({ source, rawText, capturedAt, options: { filters: options.filters ?? {} } });
+  const ohlcRows = buildOhlcRows(pools, { bucketMinutes });
+  const provenance = buildProvenance({ source, rawText, capturedAt, options: { filters: options.filters ?? {}, bucketMinutes } });
   const result = { summary: summarizePools(pools), pools, ohlcRows, provenance };
 
   if (options.outputDir) {
