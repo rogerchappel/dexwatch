@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import { realpathSync } from 'node:fs';
+import { pathToFileURL } from 'node:url';
 import { parseCliArgs } from './args.js';
 import { captureUrl } from './capture.js';
 import { DexwatchError } from './errors.js';
@@ -52,6 +54,10 @@ export async function runCli(argv = process.argv.slice(2), io = { stdout: proces
   }
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+export function isCliEntrypoint(path = process.argv[1]) {
+  return Boolean(path) && import.meta.url === pathToFileURL(realpathSync(path)).href;
+}
+
+if (isCliEntrypoint()) {
   process.exitCode = await runCli();
 }

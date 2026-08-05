@@ -22,6 +22,9 @@ network capture only when requested, and provenance metadata for every run.
 npm install -g dexwatch
 ```
 
+Published releases are available from the public npm registry and require
+Node.js 20 or newer.
+
 For local development:
 
 ```sh
@@ -122,6 +125,19 @@ npm run smoke
 npm run package:smoke
 npm run release:check
 ```
+
+## Release process
+
+Pushing a `v*.*.*` tag runs the release workflow. It completes
+`npm run release:check`, packs and publishes the verified tarball to npm with
+provenance, then attaches that tarball to the GitHub release. The package
+version must be new on npm and match the release tag.
+
+Maintainers must configure an npm trusted publisher for package `dexwatch`
+with GitHub organization/user `rogerchappel`, repository `dexwatch`, workflow
+filename `release.yml`, and no environment. The workflow uses GitHub OIDC, so
+it does not require an `NPM_TOKEN` repository secret.
+
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md). Please keep fixtures deterministic,

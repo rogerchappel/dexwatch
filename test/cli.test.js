@@ -1,6 +1,20 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { runCli } from '../src/cli.js';
+import { mkdtemp, rm, symlink } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join, resolve } from 'node:path';
+import { isCliEntrypoint, runCli } from '../src/cli.js';
+
+test('recognizes an installed binary symlink as the CLI entrypoint', async () => {
+  const directory = await mkdtemp(join(tmpdir(), 'dexwatch-cli-test-'));
+  const link = join(directory, 'dexwatch');
+  try {
+    await symlink(resolve('src/cli.js'), link);
+    assert.equal(isCliEntrypoint(link), true);
+  } finally {
+    await rm(directory, { recursive: true, force: true });
+  }
+});
 
 test('prints help without side effects', async () => {
   let stdout = '';
