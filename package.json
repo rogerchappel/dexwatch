@@ -1,6 +1,6 @@
 {
   "name": "dexwatch",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Local-first DexScreener snapshot inspection and OHLC export for reproducible bot research.",
   "type": "module",
   "bin": {
@@ -25,7 +25,8 @@
     "build": "node scripts/build.js",
     "smoke": "node scripts/smoke.js",
     "package:smoke": "node scripts/package-smoke.mjs",
-    "release:check": "npm test && npm run check && npm run build && npm run smoke && npm run package:smoke",
+    "release:metadata": "node scripts/release-metadata.mjs",
+    "release:check": "npm test && npm run check && npm run build && npm run smoke && npm run release:metadata && npm run package:smoke",
     "lint": "npm run check"
   },
   "keywords": [
