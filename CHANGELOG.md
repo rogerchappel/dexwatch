@@ -7,6 +7,8 @@ format and uses semantic versioning when versioned releases are published.
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-08-06
+
 ### Added
 
 - Initial project setup.
@@ -16,11 +18,6 @@ format and uses semantic versioning when versioned releases are published.
 - Reject invalid liquidity, volume, and OHLC bucket CLI values with actionable
   usage errors, and validate bucket sizes at the library boundary.
 
-## Release Links
-
-- Unreleased:
-  `https://github.com/rogerchappel/users-roger-developer-my-opensource-dexwatch/compare/...HEAD`
-- Latest release:
-  `https://github.com/rogerchappel/users-roger-developer-my-opensource-dexwatch/releases/latest`
-
-Replace placeholder links once the first release tag exists.
+[Unreleased]: https://github.com/rogerchappel/dexwatch/compare/v0.1.0...HEAD
+[0.2.0]: https://github.com/rogerchappel/dexwatch/compare/v0.1.0...HEAD
+[latest release]: https://github.com/rogerchappel/dexwatch/releases/latest
