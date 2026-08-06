@@ -18,19 +18,21 @@ network capture only when requested, and provenance metadata for every run.
 
 ## Install
 
+Version 0.2.0 is prepared for the first npm publish. Once
+`npm view dexwatch@0.2.0 version` returns `0.2.0`, install it from the public
+registry (Node.js 20 or newer):
+
 ```sh
 npm install -g dexwatch
 ```
 
-Published releases are available from the public npm registry and require
-Node.js 20 or newer.
-
-For local development:
+Until that version is available, install from source:
 
 ```sh
 git clone https://github.com/rogerchappel/dexwatch.git
 cd dexwatch
 npm install
+npm link
 ```
 
 ## Quickstart
@@ -137,6 +139,15 @@ Maintainers must configure an npm trusted publisher for package `dexwatch`
 with GitHub organization/user `rogerchappel`, repository `dexwatch`, workflow
 filename `release.yml`, and no environment. The workflow uses GitHub OIDC, so
 it does not require an `NPM_TOKEN` repository secret.
+
+After merging a release-readiness change, tag the matching version and wait for
+the Release workflow to complete. Verify the registry publish before announcing
+the release:
+
+```sh
+npm view dexwatch@0.2.0 version
+# 0.2.0
+```
 
 ## Contributing
 
