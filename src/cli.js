@@ -14,6 +14,7 @@ Usage:
   dexwatch capture <url> --output <dir> --allow-network true
 
 Filters:
+  -o, --output <dir>           Write output artifacts to this directory
   --chain <id>                 Keep one chain (repeatable)
   --dex <id>                   Keep one dex (repeatable)
   --symbol <base>              Keep one base token symbol (repeatable)

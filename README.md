@@ -60,6 +60,8 @@ dexwatch inspect <snapshot.json|fixture-dir> --output <dir> [filters]
 dexwatch capture <url> --output <dir> --allow-network true
 ```
 
+Use `-o <dir>` as the short form of `--output <dir>` for either command.
+
 Common filters:
 
 ```sh
