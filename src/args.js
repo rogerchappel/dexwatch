@@ -23,7 +23,7 @@ export function parseCliArgs(argv) {
 
   for (let index = 0; index < rest.length; index += 1) {
     const arg = rest[index];
-    if (!arg.startsWith('--')) {
+    if (arg !== '-o' && !arg.startsWith('--')) {
       positionals.push(arg);
       continue;
     }
@@ -44,6 +44,9 @@ export function parseCliArgs(argv) {
     else throw new DexwatchError(`Unknown option: ${arg}`, { code: 'USAGE' });
   }
 
+  if (positionals.length > 1) {
+    throw new DexwatchError(`Unexpected argument: ${positionals[1]}`, { code: 'USAGE' });
+  }
   options.input = positionals[0];
   return options;
 }
