@@ -26,6 +26,7 @@
     "smoke": "node scripts/smoke.js",
     "package:smoke": "node scripts/package-smoke.mjs",
     "release:metadata": "node scripts/release-metadata.mjs",
+    "release:tag-check": "node scripts/release-metadata.mjs --tag",
     "release:check": "npm test && npm run check && npm run build && npm run smoke && npm run release:metadata && npm run package:smoke",
     "lint": "npm run check"
   },
