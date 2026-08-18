@@ -10,6 +10,8 @@ const lockfile = await readJson('package-lock.json');
 const releasebox = await readJson('releasebox.config.json');
 const workflow = await readFile(new URL('.github/workflows/release.yml', root), 'utf8');
 const changelog = await readFile(new URL('CHANGELOG.md', root), 'utf8');
+const capture = await readFile(new URL('src/capture.js', root), 'utf8');
+const releaseCandidate = await readFile(new URL('docs/release-candidate.md', root), 'utf8');
 
 const fail = (message) => {
   throw new Error(`Release metadata check failed: ${message}`);
@@ -33,5 +35,16 @@ if (!workflow.includes('npm publish ./*.tgz --provenance --access public')) fail
 if (!changelog.includes(`## [${packageJson.version}]`)) fail('changelog lacks the package version');
 if (!changelog.includes('[Unreleased]: https://github.com/rogerchappel/dexwatch/compare/v0.1.0...HEAD')) fail('Unreleased comparison is invalid');
 if (!changelog.includes('[latest release]: https://github.com/rogerchappel/dexwatch/releases/latest')) fail('latest release link is invalid');
+if (!capture.includes("require('../package.json')")) fail('capture User-Agent must read the package version');
+if (!capture.includes("`dexwatch/${version}`")) fail('capture User-Agent must use the package version');
+
+const staleRuntimeVersion = capture.match(/dexwatch\/(\d+\.\d+(?:\.\d+)?)/)?.[1];
+if (staleRuntimeVersion && staleRuntimeVersion !== packageJson.version) {
+  fail(`capture User-Agent version ${staleRuntimeVersion} differs from package version ${packageJson.version}`);
+}
+const staleReleaseVersion = releaseCandidate.match(/(?:version:\s*|dexwatch-)(\d+\.\d+\.\d+)/)?.[1];
+if (staleReleaseVersion && staleReleaseVersion !== packageJson.version) {
+  fail(`release-candidate version ${staleReleaseVersion} differs from package version ${packageJson.version}`);
+}
 
 console.log(`Release metadata passed for dexwatch ${packageJson.version}.`);
