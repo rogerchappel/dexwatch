@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import { spawnSync } from 'node:child_process';
+import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 
 const runMetadata = (...args) => spawnSync(
@@ -38,3 +39,14 @@ for (const tag of ['0.2.0', 'v0.2', 'v0.2.0-beta.1']) {
     assert.match(result.stderr, /release tag must be stable semver prefixed with v/);
   });
 }
+
+test('release metadata checks maintained runtime and release documentation versions', async (t) => {
+  const root = new URL('..', import.meta.url);
+  const capture = await readFile(new URL('src/capture.js', root), 'utf8');
+  const releaseCandidate = await readFile(new URL('docs/release-candidate.md', root), 'utf8');
+
+  assert.match(capture, /require\('\.\.\/package\.json'\)/);
+  assert.match(capture, /`dexwatch\/\$\{version\}`/);
+  assert.doesNotMatch(capture, /dexwatch\/\d+\.\d+(?:\.\d+)?/);
+  assert.doesNotMatch(releaseCandidate, /(?:version:\s*|dexwatch-)\d+\.\d+\.\d+/);
+});
