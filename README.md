@@ -136,7 +136,9 @@ Pushing a `v*.*.*` tag runs the release workflow. It completes
 `npm run release:tag-check -- "$GITHUB_REF_NAME"` before `npm run release:check`,
 then packs and publishes the verified tarball to npm with provenance and
 attaches that tarball to the GitHub release. The package version must be new on
-npm and match the release tag. Local release checks do not require a tag.
+npm and match the release tag. The workflow pins Node.js 22.14.0 and npm
+11.5.1, the minimum versions required for npm trusted publishing, before it
+installs dependencies or publishes. Local release checks do not require a tag.
 
 Maintainers must configure an npm trusted publisher for package `dexwatch`
 with GitHub organization/user `rogerchappel`, repository `dexwatch`, workflow
