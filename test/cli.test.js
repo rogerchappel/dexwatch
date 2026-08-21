@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { access, mkdtemp, readFile, rm, symlink } from 'node:fs/promises';
+import { access, mkdtemp, readFile, rm, symlink, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { isCliEntrypoint, runCli } from '../src/cli.js';
@@ -80,6 +80,30 @@ test('inspect -o writes artifacts to the requested directory', async () => {
     await rm(directory, { recursive: true, force: true });
   }
 });
+
+for (const [label, snapshot, message] of [
+  ['unsupported object root', {}, /expected an array of pairs or an object with a pairs array/],
+  ['null pair entry', [null], /pair at index 0: expected an object/]
+]) {
+  test(`inspect rejects ${label} without writing artifacts`, async () => {
+    const directory = await mkdtemp(join(tmpdir(), 'dexwatch-cli-invalid-snapshot-'));
+    const input = join(directory, 'snapshot.json');
+    const outputDir = join(directory, 'output');
+    let stderr = '';
+    try {
+      await writeFile(input, JSON.stringify(snapshot));
+      const code = await runCli(
+        ['inspect', input, '-o', outputDir],
+        { stdout: { write: () => {} }, stderr: { write: (chunk) => { stderr += chunk; } } }
+      );
+      assert.equal(code, 1);
+      assert.match(stderr, message);
+      await assert.rejects(access(outputDir), { code: 'ENOENT' });
+    } finally {
+      await rm(directory, { recursive: true, force: true });
+    }
+  });
+}
 
 test('capture -o writes artifacts to the requested directory', async (t) => {
   const directory = await mkdtemp(join(tmpdir(), 'dexwatch-cli-output-'));
