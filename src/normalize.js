@@ -1,4 +1,25 @@
 import { normalizeAddress, normalizeSymbol, toIsoString, toNumber } from './schema.js';
+import { DexwatchError } from './errors.js';
+
+function invalidSnapshot(message, details) {
+  return new DexwatchError(message, { code: 'INVALID_SNAPSHOT', details });
+}
+
+function snapshotPairs(input) {
+  if (Array.isArray(input)) return input;
+  if (input !== null && typeof input === 'object' && !Array.isArray(input) && Array.isArray(input.pairs)) {
+    return input.pairs;
+  }
+  throw invalidSnapshot('Invalid snapshot: expected an array of pairs or an object with a pairs array', {
+    received: input === null ? 'null' : Array.isArray(input) ? 'array' : typeof input
+  });
+}
+
+function validatePair(pair, index) {
+  if (pair === null || typeof pair !== 'object' || Array.isArray(pair)) {
+    throw invalidSnapshot(`Invalid snapshot pair at index ${index}: expected an object`, { index });
+  }
+}
 
 export function normalizePool(pair, options = {}) {
   const fallbackCapturedAt = options.capturedAt ?? new Date(0).toISOString();
@@ -37,6 +58,7 @@ export function normalizePool(pair, options = {}) {
 
 export function parseDexScreenerSnapshot(input, options = {}) {
   const capturedAt = options.capturedAt ?? input?.capturedAt ?? new Date(0).toISOString();
-  const rawPairs = Array.isArray(input?.pairs) ? input.pairs : Array.isArray(input) ? input : [];
+  const rawPairs = snapshotPairs(input);
+  rawPairs.forEach(validatePair);
   return rawPairs.map((pair) => normalizePool(pair, { capturedAt }));
 }

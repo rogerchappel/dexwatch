@@ -78,6 +78,11 @@ Liquidity and volume minimums accept finite non-negative numbers, including
 decimals. The OHLC bucket size accepts any finite number greater than zero.
 Invalid numeric values are rejected as usage errors before files are inspected.
 
+Snapshot JSON must be either a pair array or an object containing a `pairs`
+array. Empty arrays (including `{ "pairs": [] }`) are valid empty snapshots.
+Other root shapes and non-object pair entries are rejected before any report
+artifacts are written.
+
 OHLC samples are ordered by `capturedAt`, so `open` is the earliest price and
 `close`, `liquidityUsd`, and `volumeH24` come from the latest sample. Samples
 with the same timestamp are ordered by base symbol, quote symbol, price,
