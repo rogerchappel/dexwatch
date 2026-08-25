@@ -20,6 +20,19 @@ function validatePair(pair, index) {
     throw invalidSnapshot(`Invalid snapshot pair at index ${index}: expected an object`, { index });
   }
 
+  for (const field of ['baseToken', 'quoteToken', 'liquidity', 'volume', 'txns', 'txns.h24']) {
+    validatePairField(pair, index, field, (value) => value !== null
+      && typeof value === 'object'
+      && !Array.isArray(value), 'an object');
+  }
+  for (const field of [
+    'chainId', 'dexId', 'pairAddress', 'url',
+    'baseToken.address', 'baseToken.name', 'baseToken.symbol',
+    'quoteToken.address', 'quoteToken.name', 'quoteToken.symbol'
+  ]) {
+    validatePairField(pair, index, field, (value) => typeof value === 'string', 'a string');
+  }
+
   for (const field of [
     'priceUsd', 'priceNative', 'liquidity.usd', 'volume.h24',
     'txns.h24.buys', 'txns.h24.sells', 'fdv', 'marketCap'
