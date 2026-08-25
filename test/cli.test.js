@@ -85,7 +85,9 @@ for (const [label, snapshot, message] of [
   ['unsupported object root', {}, /expected an array of pairs or an object with a pairs array/],
   ['null pair entry', [null], /pair at index 0: expected an object/],
   ['invalid numeric pair field', [{ liquidity: { usd: 'unknown' } }], /index 0 field liquidity\.usd/],
-  ['invalid timestamp pair field', [{ pairCreatedAt: 'not-a-date' }], /index 0 field pairCreatedAt/]
+  ['invalid timestamp pair field', [{ pairCreatedAt: 'not-a-date' }], /index 0 field pairCreatedAt/],
+  ['invalid token container', [{ baseToken: null }], /index 0 field baseToken/],
+  ['invalid identity field', [{ quoteToken: { symbol: [] } }], /index 0 field quoteToken\.symbol/]
 ]) {
   test(`inspect rejects ${label} without writing artifacts`, async () => {
     const directory = await mkdtemp(join(tmpdir(), 'dexwatch-cli-invalid-snapshot-'));
