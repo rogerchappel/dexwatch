@@ -55,6 +55,57 @@ for (const [path, pair] of [
   });
 }
 
+for (const [path, pair] of [
+  ['baseToken', { baseToken: null }],
+  ['quoteToken', { quoteToken: [] }],
+  ['liquidity', { liquidity: 'deep' }],
+  ['volume', { volume: 24 }],
+  ['txns', { txns: false }],
+  ['txns.h24', { txns: { h24: [] } }]
+]) {
+  test(`rejects malformed pair container ${path}`, () => {
+    assert.throws(
+      () => parseDexScreenerSnapshot([pair]),
+      (error) => error?.code === 'INVALID_SNAPSHOT'
+        && error?.details?.index === 0
+        && error?.details?.field === path
+        && error.message.includes(`index 0 field ${path}`)
+    );
+  });
+}
+
+for (const [path, pair] of [
+  ['chainId', { chainId: 1 }],
+  ['dexId', { dexId: {} }],
+  ['pairAddress', { pairAddress: ['0xabc'] }],
+  ['url', { url: true }],
+  ['baseToken.address', { baseToken: { address: 10 } }],
+  ['baseToken.name', { baseToken: { name: null } }],
+  ['baseToken.symbol', { baseToken: { symbol: false } }],
+  ['quoteToken.address', { quoteToken: { address: {} } }],
+  ['quoteToken.name', { quoteToken: { name: 10 } }],
+  ['quoteToken.symbol', { quoteToken: { symbol: [] } }]
+]) {
+  test(`rejects malformed identity field ${path}`, () => {
+    assert.throws(
+      () => parseDexScreenerSnapshot([pair]),
+      (error) => error?.code === 'INVALID_SNAPSHOT'
+        && error?.details?.index === 0
+        && error?.details?.field === path
+        && error.message.includes(`index 0 field ${path}`)
+    );
+  });
+}
+
+test('preserves defaults when optional containers and identity fields are omitted', () => {
+  const [pool] = parseDexScreenerSnapshot([{}]);
+  assert.equal(pool.chainId, '');
+  assert.equal(pool.dexId, '');
+  assert.equal(pool.pairAddress, '');
+  assert.deepEqual(pool.baseToken, { address: '', name: '', symbol: '' });
+  assert.deepEqual(pool.quoteToken, { address: '', name: '', symbol: '' });
+});
+
 test('accepts object and array snapshot roots, including valid empty snapshots', () => {
   assert.equal(parseDexScreenerSnapshot(snapshot).length, 1);
   assert.equal(parseDexScreenerSnapshot(snapshot.pairs).length, 1);
