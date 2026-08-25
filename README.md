@@ -81,7 +81,13 @@ Invalid numeric values are rejected as usage errors before files are inspected.
 Snapshot JSON must be either a pair array or an object containing a `pairs`
 array. Empty arrays (including `{ "pairs": [] }`) are valid empty snapshots.
 Other root shapes and non-object pair entries are rejected before any report
-artifacts are written.
+artifacts are written. Optional numeric pair fields (`priceUsd`, `priceNative`,
+`liquidity.usd`, `volume.h24`, `txns.h24.buys`, `txns.h24.sells`, `fdv`, and
+`marketCap`) may be finite numbers or finite numeric strings. `pairCreatedAt`
+and `capturedAt` may be valid date strings or timestamps. Omitted fields use
+their documented normalization defaults; explicitly empty, null, non-finite,
+or otherwise invalid numeric and date values are rejected with the pair index
+and field path before artifacts are written.
 
 OHLC samples are ordered by `capturedAt`, so `open` is the earliest price and
 `close`, `liquidityUsd`, and `volumeH24` come from the latest sample. Samples
