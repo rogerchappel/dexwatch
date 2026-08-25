@@ -102,8 +102,8 @@ test('preserves defaults when optional containers and identity fields are omitte
   assert.equal(pool.chainId, '');
   assert.equal(pool.dexId, '');
   assert.equal(pool.pairAddress, '');
-  assert.deepEqual(pool.baseToken, { address: '', name: '', symbol: '' });
-  assert.deepEqual(pool.quoteToken, { address: '', name: '', symbol: '' });
+  assert.deepEqual(pool.baseToken, { address: '', name: '', symbol: 'UNKNOWN' });
+  assert.deepEqual(pool.quoteToken, { address: '', name: '', symbol: 'UNKNOWN' });
 });
 
 test('accepts object and array snapshot roots, including valid empty snapshots', () => {
