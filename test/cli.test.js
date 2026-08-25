@@ -83,7 +83,9 @@ test('inspect -o writes artifacts to the requested directory', async () => {
 
 for (const [label, snapshot, message] of [
   ['unsupported object root', {}, /expected an array of pairs or an object with a pairs array/],
-  ['null pair entry', [null], /pair at index 0: expected an object/]
+  ['null pair entry', [null], /pair at index 0: expected an object/],
+  ['invalid numeric pair field', [{ liquidity: { usd: 'unknown' } }], /index 0 field liquidity\.usd/],
+  ['invalid timestamp pair field', [{ pairCreatedAt: 'not-a-date' }], /index 0 field pairCreatedAt/]
 ]) {
   test(`inspect rejects ${label} without writing artifacts`, async () => {
     const directory = await mkdtemp(join(tmpdir(), 'dexwatch-cli-invalid-snapshot-'));
