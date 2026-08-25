@@ -19,6 +19,40 @@ function validatePair(pair, index) {
   if (pair === null || typeof pair !== 'object' || Array.isArray(pair)) {
     throw invalidSnapshot(`Invalid snapshot pair at index ${index}: expected an object`, { index });
   }
+
+  for (const field of [
+    'priceUsd', 'priceNative', 'liquidity.usd', 'volume.h24',
+    'txns.h24.buys', 'txns.h24.sells', 'fdv', 'marketCap'
+  ]) {
+    validatePairField(pair, index, field, (value) => value !== null
+      && value !== ''
+      && Number.isFinite(Number(value)), 'a finite number or numeric string');
+  }
+  for (const field of ['pairCreatedAt', 'capturedAt']) {
+    validatePairField(pair, index, field, (value) => value !== null
+      && value !== ''
+      && !Number.isNaN(new Date(value).getTime()), 'a valid date or timestamp');
+  }
+}
+
+function validatePairField(pair, index, field, predicate, expected) {
+  const segments = field.split('.');
+  let value = pair;
+  for (let offset = 0; offset < segments.length; offset += 1) {
+    if (!Object.hasOwn(value, segments[offset])) return;
+    value = value[segments[offset]];
+    if (offset < segments.length - 1 && (value === null || typeof value !== 'object' || Array.isArray(value))) {
+      const container = segments.slice(0, offset + 1).join('.');
+      throw invalidSnapshot(`Invalid snapshot pair at index ${index} field ${container}: expected an object`, {
+        index, field: container
+      });
+    }
+  }
+  if (!predicate(value)) {
+    throw invalidSnapshot(`Invalid snapshot pair at index ${index} field ${field}: expected ${expected}`, {
+      index, field
+    });
+  }
 }
 
 export function normalizePool(pair, options = {}) {

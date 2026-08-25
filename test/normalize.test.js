@@ -17,6 +17,44 @@ test('normalizes dexscreener pair snapshots', () => {
   assert.equal(pool.txnsH24, 5);
 });
 
+test('accepts finite numeric strings and valid pair timestamps', () => {
+  const [pool] = parseDexScreenerSnapshot([{
+    priceUsd: '12.50', priceNative: '0.005', liquidity: { usd: '1000' },
+    volume: { h24: '200' }, txns: { h24: { buys: '2', sells: '3' } },
+    fdv: '5000', marketCap: '4000', pairCreatedAt: 1777593600000,
+    capturedAt: '2026-05-01T00:00:00.000Z'
+  }]);
+  assert.equal(pool.priceUsd, 12.5);
+  assert.equal(pool.priceNative, 0.005);
+  assert.equal(pool.liquidityUsd, 1000);
+  assert.equal(pool.volumeH24, 200);
+  assert.equal(pool.txnsH24, 5);
+  assert.equal(pool.pairCreatedAt, '2026-05-01T00:00:00.000Z');
+});
+
+for (const [path, pair] of [
+  ['priceUsd', { priceUsd: 'not-a-price' }],
+  ['priceNative', { priceNative: '' }],
+  ['liquidity.usd', { liquidity: { usd: Number.NaN } }],
+  ['volume.h24', { volume: { h24: 'lots' } }],
+  ['txns.h24.buys', { txns: { h24: { buys: Infinity } } }],
+  ['txns.h24.sells', { txns: { h24: { sells: null } } }],
+  ['fdv', { fdv: {} }],
+  ['marketCap', { marketCap: 'unknown' }],
+  ['pairCreatedAt', { pairCreatedAt: 'not-a-date' }],
+  ['capturedAt', { capturedAt: '' }]
+]) {
+  test(`rejects malformed pair field ${path}`, () => {
+    assert.throws(
+      () => parseDexScreenerSnapshot([pair]),
+      (error) => error?.code === 'INVALID_SNAPSHOT'
+        && error?.details?.index === 0
+        && error?.details?.field === path
+        && error.message.includes(`index 0 field ${path}`)
+    );
+  });
+}
+
 test('accepts object and array snapshot roots, including valid empty snapshots', () => {
   assert.equal(parseDexScreenerSnapshot(snapshot).length, 1);
   assert.equal(parseDexScreenerSnapshot(snapshot.pairs).length, 1);
