@@ -58,6 +58,30 @@ test('sorts rows by a complete stable identity', () => {
   assert.deepEqual(buildOhlcRows(samples), buildOhlcRows(samples.toReversed()));
 });
 
+test('keeps distinct address-less pools separate while aggregating repeated samples', () => {
+  const capturedAt = '2026-05-01T00:10:00.000Z';
+  const addressLess = {
+    ...base,
+    pairAddress: '',
+    quoteToken: { address: '0xusd', symbol: 'USD' },
+    capturedAt
+  };
+  const samples = [
+    { ...addressLess, baseToken: { address: '0xaaa', symbol: 'AAA' }, priceUsd: 1 },
+    { ...addressLess, baseToken: { address: '0xbbb', symbol: 'BBB' }, priceUsd: 10 },
+    { ...addressLess, baseToken: { address: '0xaaa', symbol: 'AAA' }, priceUsd: 2,
+      capturedAt: '2026-05-01T00:20:00.000Z' }
+  ];
+
+  const rows = buildOhlcRows(samples);
+
+  assert.equal(rows.length, 2);
+  assert.deepEqual(rows.map((row) => row.baseSymbol), ['AAA', 'BBB']);
+  assert.deepEqual(rows.map((row) => row.sampleCount), [2, 1]);
+  assert.deepEqual(rows.map((row) => [row.open, row.close]), [[1, 2], [10, 10]]);
+  assert.deepEqual(buildOhlcRows(samples), buildOhlcRows(samples.toReversed()));
+});
+
 test('accepts positive decimal bucket sizes', () => {
   const rows = buildOhlcRows([
     { ...base, priceUsd: 1, capturedAt: '2026-05-01T00:07:00.000Z' }
