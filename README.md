@@ -97,9 +97,13 @@ before artifacts are written.
 OHLC samples are ordered by `capturedAt`, so `open` is the earliest price and
 `close`, `liquidityUsd`, and `volumeH24` come from the latest sample. Samples
 with the same timestamp are ordered by base symbol, quote symbol, price,
-liquidity, then volume. Exported rows are ordered by bucket start, chain, DEX,
-and pair address. These complete ordering keys make exports identical for every
-permutation of the same samples.
+liquidity, then volume. A non-empty pair address identifies a pool for OHLC
+aggregation. When `pairAddress` is omitted, the normalized base and quote token
+addresses and symbols plus the pool URL form its deterministic fallback
+identity. Repeated samples with the same fallback identity aggregate, while
+different address-less token pairs do not share a candle. Exported rows are
+ordered by bucket start, chain, DEX, and this complete pool identity. These
+ordering keys make exports identical for every permutation of the same samples.
 
 ## Library API
 
