@@ -7,6 +7,11 @@ format and uses semantic versioning when versioned releases are published.
 
 ## [Unreleased]
 
+### Fixed
+
+- Keep distinct address-less pools in separate OHLC rows by using their token
+  metadata and URL as a deterministic fallback identity.
+
 ## [0.2.0] - 2026-08-06
 
 ### Added
