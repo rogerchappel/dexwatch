@@ -6,8 +6,20 @@ function bucketStart(isoTimestamp, bucketMinutes) {
   return new Date(Math.floor(ms / sizeMs) * sizeMs).toISOString();
 }
 
+function poolIdentity(pool) {
+  if (pool.pairAddress) return JSON.stringify(['pairAddress', pool.pairAddress]);
+  return JSON.stringify([
+    'address-less',
+    pool.baseToken.address ?? '',
+    pool.baseToken.symbol,
+    pool.quoteToken.address ?? '',
+    pool.quoteToken.symbol,
+    pool.url ?? ''
+  ]);
+}
+
 function rowKey(pool, bucket) {
-  return [pool.chainId, pool.dexId, pool.pairAddress, bucket].join('|');
+  return JSON.stringify([pool.chainId, pool.dexId, poolIdentity(pool), bucket]);
 }
 
 function compareSamples(a, b) {
@@ -23,7 +35,7 @@ function compareRows(a, b) {
   return a.bucketStart.localeCompare(b.bucketStart)
     || a.chainId.localeCompare(b.chainId)
     || a.dexId.localeCompare(b.dexId)
-    || a.pairAddress.localeCompare(b.pairAddress);
+    || a.identity.localeCompare(b.identity);
 }
 
 export function buildOhlcRows(pools, options = {}) {
@@ -44,6 +56,7 @@ export function buildOhlcRows(pools, options = {}) {
         bucketMinutes,
         chainId: pool.chainId,
         dexId: pool.dexId,
+        identity: poolIdentity(pool),
         pairAddress: pool.pairAddress,
         baseSymbol: pool.baseToken.symbol,
         quoteSymbol: pool.quoteToken.symbol,
@@ -65,5 +78,7 @@ export function buildOhlcRows(pools, options = {}) {
     }
   }
 
-  return [...buckets.values()].sort(compareRows);
+  return [...buckets.values()]
+    .sort(compareRows)
+    .map(({ identity: _identity, ...row }) => row);
 }
